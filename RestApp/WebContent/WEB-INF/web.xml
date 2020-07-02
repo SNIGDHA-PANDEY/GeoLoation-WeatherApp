@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>RestApp</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>FetchLocation</display-name>
+    <servlet-name>FetchLocation</servlet-name>
+    <servlet-class>com.weatherapp.FetchLocation</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FetchLocation</servlet-name>
+    <url-pattern>/fetch</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FetchWeather</display-name>
+    <servlet-name>FetchWeather</servlet-name>
+    <servlet-class>com.weatherapp.FetchWeather</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FetchWeather</servlet-name>
+    <url-pattern>/weather</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <display-name>LocationFilter</display-name>
+    <filter-name>LocationFilter</filter-name>
+    <filter-class>com.weatherapp.LocationFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>LocationFilter</filter-name>
+    <servlet-name>FetchLocation</servlet-name>
+  </filter-mapping>
+</web-app>
